@@ -1,0 +1,83 @@
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'stylesheet/loader.css' %}">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="navbar-brand" >
+      <a href="https://www.limkokwing.net/lesotho/about/campus/" target="_blank">
+        <img src="{% static 'images/download.png'%}" class="logo-img" width="150" height="70" padding="10px 50px">
+      </a>
+     <span class="logo-text" style="padding:0px 20px"><h2>Career Services</h2></span>
+   </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="Career-services">Home</a>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="students" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Students
+        </a>
+        <div class="dropdown-menu" aria-labelledby="jobSearchDropdown">
+          <a class="dropdown-item" href="#">Welcome</a>
+           <a class="dropdown-item" href="career-advice">Career Advice</a>
+          <a class="dropdown-item" href="my_degree">Considering Your Future</a>
+          <a class="dropdown-item" href="Making_applications">Making Applications</a>
+           <a class="dropdown-item" href="#">Prospective Students</a>
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="jobSearchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Internship
+        </a>
+        <div class="dropdown-menu" aria-labelledby="jobSearchDropdown">
+          <a class="dropdown-item" href="#">About the Internship office</a>
+          <a class="dropdown-item" href="#">Internship and work experience advice</a>
+          <a class="dropdown-item" href="#">Available internships</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Build Skills
+        </a>
+        <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+          <a class="dropdown-item" href="#">Develop your employability skills</a>
+          <a class="dropdown-item" href="#"></a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Employers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+          <a class="dropdown-item" href="#">Register With LUCT Career Service</a>
+          <a class="dropdown-item" href="#">Advertise Jobs and Opportunities</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Faculties And Departments
+        </a>
+        <div class="dropdown-menu" aria-labelledby="supportDropdown">
+          <a class="dropdown-item" href="#">Faculty of Design and Innovation</a>
+          <a class="dropdown-item" href="#">Faculty of Tourism and Hospitality</a>
+          <a class="dropdown-item" href="#">Faculty of Business and Globalization</a>
+          <a class="dropdown-item" href="#">Faculty of Architecture and Built Environment</a>
+          <a class="dropdown-item" href="#">Faculty of Communication Media and Technology</a>
+          <a class="dropdown-item" href="#">Faculty of Information and Communication and Technology</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+     <a href="{% url 'home' %}" class="btn btn-light fw-bold" style="margin-top:-90px; font-size:10px; margin-right:90px">LIMKOKWING UNIVERSITY ALUMNI</a>
+</nav>

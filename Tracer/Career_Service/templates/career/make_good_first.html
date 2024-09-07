@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>LUCT Career Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+
+.rectangle {
+   padding:20px 3px;
+  display: inline-block;
+  width: 4px;
+  height: 30px;
+  background-color: #007bff; /* Blue color, you can change it to any color you want */
+}
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-left:310px;
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+        .navigation {
+            position: absolute;
+            transform: translateY(-80%);
+            z-index: 999;
+        }
+        .prev-page,
+        .next-page {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+   .dropdown .IT-menu {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+    width:30%;
+    margin-top:8;
+    margin-left:-300px;
+}
+
+   .dropdown .comm-menu {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+    width:95%;
+    margin-top:20;
+}
+
+
+.dropdown:hover .IT-menu {
+    display: block;
+}
+
+.IT-menu li {
+    padding: 10px;
+}
+
+.IT-menu li a {
+    text-decoration: none;
+    color: #1A237E;
+    display: block;
+
+}
+
+.IT-menu li a:hover {
+    background-color: #;
+    border-radius: 5px;
+}
+
+.dropdown  .IT .text {
+    margin-left: -680px; /* Set margin-left as needed */
+}
+.dropdown  .comm .text {
+    margin-left: -770px; /* Set margin-left as needed */
+}
+.dropdown  .dis .text {
+    margin-left: -930px; /* Set margin-left as needed */
+}
+
+.dropdown  .arc .text {
+    margin-left: -750px; /* Set margin-left as needed */
+}
+
+.dropdown  .tou .text {
+    margin-left: -890px; /* Set margin-left as needed */
+}
+    .navbar {
+          color: #ffffff; /* Text color */
+          font-size: 18px; /* Increased font size */
+          position: fixed;
+          width:100%;
+          height:20%;
+          top:0;
+          z-index: 1000;
+        }
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+
+    }
+
+    .navbar-nav{
+       margin-bottom:-120px;
+       position: fixed;
+       background-color:;
+       width:100%;
+       padding:10px 100px;
+       z-index: 1000;
+    }
+    .navbar-nav .nav-link {
+      color: #ffffff !important; /* Text color */
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important; /* Text color on hover */
+    }
+    .navbar-toggler-icon {
+      background-color: #ffffff; /* Color of the toggler icon */
+    }
+    .dropdown-menu {
+      background-color: #343a40; /* Dropdown background color */
+      margin-top: -10px;
+    }
+    .dropdown-menu .dropdown-item {
+      color: #ffffff; /* Dropdown item text color */
+    }
+    .dropdown-menu .dropdown-item:hover {
+      background-color: #ffc107; /* Background color on hover */
+    }
+
+    .navbar-brand {
+        padding: 25px;
+        display: flex;
+        align-items: center;
+    }
+    }
+    .logo-link {
+        display: flex;
+        align-items: center; /* Vertically center items */
+        text-decoration: none;
+        color: black;
+    }
+
+
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-top:150px;
+            margin-left:330px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  }
+
+  .item {
+    text-align: center;
+  }
+
+  .item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container1 {
+    position: relative;
+    text-align: center;
+    color: white; /* Text color */
+    z-index:1;
+  }
+
+  /* Style for the image */
+  .image {
+    width: 100%; /* Full width */
+    height: 600px; /* Maintain aspect ratio */
+  }
+
+
+  .text1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+  }
+
+  </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="navbar-brand" >
+     <a href="https://www.limkokwing.net/lesotho/about/campus/" target="_blank">
+    <img src="https://www.thereporter.co.ls/wp-content/uploads/2019/05/Limkokwing_Lesotho_Logo.jpg" class="logo-img" width="150" height="90" padding="10px 50px">
+</a>
+     <span class="logo-text" style="padding:0px 20px"><h2>Career Services</h2></span>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="Career-services">Home</a>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="students" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Students
+        </a>
+        <div class="dropdown-menu" aria-labelledby="jobSearchDropdown">
+          <a class="dropdown-item" href="#">Welcome</a>
+           <a class="dropdown-item" href="career-advice">Career Advice</a>
+          <a class="dropdown-item" href="my_degree">Considering Your Future</a>
+          <a class="dropdown-item" href="Making_applications">Making Applications</a>
+           <a class="dropdown-item" href="#">Prospective Students</a>
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="jobSearchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Internship
+        </a>
+        <div class="dropdown-menu" aria-labelledby="jobSearchDropdown">
+          <a class="dropdown-item" href="#">About the Internship office</a>
+          <a class="dropdown-item" href="#">Internship and work experience advice</a>
+          <a class="dropdown-item" href="#">Available internships</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Build Skills
+        </a>
+        <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+          <a class="dropdown-item" href="#">Develop your employability skills</a>
+          <a class="dropdown-item" href="#"></a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Employers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+          <a class="dropdown-item" href="#">Register With LUCT Career Service</a>
+          <a class="dropdown-item" href="#">Advertise Jobs and Opportunities</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Faculties And Departments
+        </a>
+        <div class="dropdown-menu" aria-labelledby="supportDropdown">
+          <a class="dropdown-item" href="#">Faculty of Design and Innovation</a>
+          <a class="dropdown-item" href="#">Faculty of Tourism and Hospitality</a>
+          <a class="dropdown-item" href="#">Faculty of Business and Globalization</a>
+          <a class="dropdown-item" href="#">Faculty of Architecture and Built Environment</a>
+          <a class="dropdown-item" href="#">Faculty of Communication Media and Technology</a>
+          <a class="dropdown-item" href="#">Faculty of Information and Communication and Technology</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+     <a href="{% url 'home' %}" class="btn btn-light fw-bold" style="margin-top:-90px; font-size:10px; margin-right:90px">LIMKOKWING UNIVERSITY ALUMNI</a>
+</nav>
+
+    <div class="make" style="margin-top:0px; background-color:#CFD8DC; height:800px;position: fixed; padding:80px 2px; width:330px " >
+        <div class="material" style="position: fixed; margin-top:80px">
+          <ul>
+
+                <P></P>
+                <a style="text-decoration: none; color:black; font-size:18px" href="types-of-interviews"> Types of Interviews</a><br>
+                <P></P>
+                <a style="text-decoration: none; color:black; font-size:18px" href="techniques-of-interviews"> Interview Technique</a><br>
+                <P></P>
+                <a style="text-decoration: none; color:black; font-size:18px" href="#further-education"> Telephone and Video Interviews</a>
+                <P></P>
+                <a style="text-decoration: none; color:black; font-size:18px" href="#resources">Legal Case Study Interviews</a>
+                <P></P>
+                <a style="text-decoration: none; color:black; font-size:18px" href="#resources">Case Study Style Interviews</a>
+                <P></P>
+                <a style="text-decoration: none; color:black; font-size:18px" href="make-good-first">Make a Good First Impression</a>
+        </ul>
+        </div>
+    </div>
+
+        <div id="pdf-container" style="margin-top:150px; width:1200px">
+
+              <div class="container1"  style="margin-top:50px">
+                  <img src="https://www.wdbccc.com/wp-content/uploads/2024/03/Interview-1.png" alt="Image" class="image" style="height:500px">
+
+
+
+
+                    <div class="type" style="width:90%; position: absolute; z-index:1;  margin-top:-180px; background-color:#fff; margin-left:40px; height:600px; z-index:1000">
+
+
+                        <h3 style="margin-left:50px; color:#000; font-weight:bold; margin-top:30px">Make a Good First Impression</h3>
+
+                        <p style="color:#000; text-align: justify; padding:0px 70px; font-size:18px">First impressions are important. Be ready to say hello with a smile, confident handshake and steady eye contact.</p>
+                        <p style="color:#000; text-align: justify; padding:0px 70px; font-size:15px">Below are some of our suggestions for making a good first impression in an in-person interview. We recommend that you also read our webpage on <a href="#" target="_blank"> <span style=" text-decoration: none">Telephone and Video Interviews</span></a>  for ideas about virtual interviews.
+                        <br>
+                        <hr style="width:1000px; margin-left:70px; ">
+                        <a href="#" style="text-decoration: none; color:black; font-size:16px;padding:0px 20px; border-color:red; margin-right:730px; font-size:12; font-weight:bold" onclick="toggleContent(event)">Preparing in advance</a>
+                        <div id="content" class="hidden-content" style="padding:0px 20px; display:none; margin-top:20px" >
+                        <p style="color:#000; text-align: justify; margin-left:75px;">You’ll have received an invitation letter or email with details of your interview. Congratulations! Check it closely to make sure you know exactly what time you have to be there (you will often be asked to arrive five or ten minutes early, so make sure you take this into account if necessary). Plan your route, and think about transport options, traffic, parking or how busy public transport will be. Do you know exactly where you’re going? It might be a good idea to find the venue in advance. When will you eat? You could perhaps pop a cereal bar and a small bottle of water in your bag. Do you have to take any documents with you? Sometimes you are asked to take ID or proof of right to work – if so, find these in advance and make sure you know where they are on the day.</p>
+
+                        <p style="color:#000; text-align: justify; margin-left:75px;">When you arrive at the venue on the day, there will usually be a reception desk or similar. Let them know your name and that you’re there for an interview. If it’s a large organisation there might be multiple recruitment processes running simultaneously so be prepared to mention the job title you’re interviewing for, and name of the interviewer (it should be on your letter). Don’t forget that reception staff might be asked for their informal impressions of candidates – so be unfailingly polite and professional with everyone you meet!</p>
+
+                        <p style="color:#000; text-align: justify; margin-left:75px;">Consider in advance what you’re going to wear. There’s a whole section below on ‘what to wear’ – read it through and make sure you have your outfit clean and prepared ahead of the interview date.
+
+                        <p style="color:#000; text-align: justify; margin-left:75px;">Always make sure to check the letter of invitation carefully, particularly if there is a social element to the interview (perhaps a dinner for candidates the night before), and be guided by any instructions that are given to you.
+
+
+                        <H6 style="font-weight:bold; margin-right:750px; margin-top:20px; color:black">If you can't attend</H6>
+                        <p style="color:#000; text-align: justify; margin-left:75px;">It is a good idea to watch/listen to good news programmes or read a quality newspaper every day in the lead-up to your interview, and to think, or talk with friends, about current news stories and issues of importance, in case they come up on the day of interview. </p>
+
+                        <p style="color:#000; text-align: justify; margin-left:75px;">It is not always possible to attend an interview on the day stipulated in your invitation. Recruiters will understand that you have academic or family commitments which sometimes can't be changed. If you are really unable to attend the interview, contact the person who has issued the invitation as soon as possible and ask politely whether it can be rescheduled – however, remember that you will be expected to make every effort to be there if at all possible.</p>
+
+                        </div>
+                        <hr style="width:1000px; margin-left:70px; opacity:1px; height: 2px; background-color: #fff; ">
+
+                        <a href="#" style="text-decoration: none; color:black; font-size:16px;padding:0px 20px; border-color:red; margin-right:795px; font-weight:bold" onclick="toggleContent1(event)">What to wear</a> <br>
+
+                        <div id="content1" class="hidden-content" style="padding:0px 20px; display:none" >
+
+                                 <ul style="color:#000; text-align: justify; margin-left:75px;">
+                                    <li>Be clean, neat and tidy. Appropriateness is the key word here, and you will be expected to wear clothes that constitute a smart version of the items usually worn by people in the role for which you have applied.</li>
+                                    <li>The dress code in different industries can vary considerably. If you are unsure of the industry norm for the role you are applying to, think back to what representatives were wearing at careers fairs, presentations or events, look at images of employees on the firm’s website, talk to an alumnus working in the same sector or talk to a careers adviser. If in doubt, be more smart/formal rather than less.</li>
+                                    <li>Make sure your clothes are clean and ironed in advance of the day of the interview.</li>
+                                    <li>It is a good idea to practise standing and sitting in your outfit and your shoes to make sure you feel comfortable. Breaking in new shoes is also a good idea!</li>
+                                    <li>Be clean and presentable, but don't go overboard with deodorants and scents, as these can be overbearing in a small interview room.</li>
+                                 </ul>
+
+                            <H6 style="font-weight:bold; margin-right:500px; margin-top:20px; color:black">The following tips from employers should help:</H6>
+
+                                 <ul style="color:#000; text-align: justify; margin-left:75px;">
+
+                                    <li>Ensure that your shoes and clothes are scrupulously clean and maintained. Unpolished shoes and missing buttons will not create the desired impression.</li>
+                                    <li>Avoid inappropriate jewellery. Unless you are entering an extremely unconventional environment, you should err on the side of subtlety. You can express your individuality once you’ve got the job.</li>
+                                    <li>Avoid gimmicky ties or socks. Socks worn with a suit should never be white, and brown shoes do not go with a city suit!</li>
+                                    <li>Try on the whole ensemble a few days in advance. Walk around a bit and spend some time sitting down to see if any adjustments are needed. The goal is to look good and feel comfortable.</li>
+                                    <li>Pay attention to fit. Clothes that are too tight can make you physically uncomfortable – which can affect your concentration and interview performance.</li>
+                                 </ul>
+                        </div>
+                        <hr style="width:1000px; margin-left:70px; ">
+
+                         <a href="#" style="text-decoration: none; color:black; font-size:16px;padding:0px 20px; border-color:red; margin-right:660px; font-size:12; font-weight:bold" onclick="toggleContent2(event)">Before you set out: a checklist</a> <br>
+
+                        <div id="content2" class="hidden-content" style="padding:0px 20px; display:none" >
+                            <p style="color:#000; text-align: justify; margin-left:75px;">It doesn't look good to be late, or to turn up without something important. As well as making preparations for the interview discussion, it is important that you prepare the practicalities as well. Work through this checklist to make sure you have everything you need:</p>
+
+
+                                 <ul style="color:#000; text-align: justify; margin-left:75px;">
+                                    <li>Correct time of interview (plan to arrive 15 minutes early) and exact location</li>
+                                    <li>Letter inviting you to the interview with the name of your interviewer</li>
+                                    <li>The organisation's telephone number</li>
+                                    <li>A copy of your CV and/or application form</li>
+                                    <li>A list of the key points you would like to make, and the questions you would like to ask</li>
+                                    <li>ID or proof of right to work if the organisation has asked you to bring these along</li>
+                                    <li>Directions/map and, if using public transport, bus/train timetables and (money for) tickets</li>
+                                    <li>If driving, an idea of where to park and change for parking meters if necessary</li>
+                                    <li>Don’t forget your umbrella – it’s not good to arrive drenched!</li>
+                                    <li>Make sure you have factored in time to have something to eat well before the interview - and avoid anything that will repeat on you during the interview!</li>
+                                 </ul>
+                            <p style="color:#000; text-align: justify; margin-left:75px;">If most of this list is stored on your smartphone make sure you have a full battery and consider taking a hard copy of the contact number and address just in case of emergencies.</p>
+                        </div>
+                        <hr style="width:1000px; margin-left:70px; ">
+
+                        <a href="#" style="text-decoration: none; color:black; font-size:16px;padding:0px 20px; border-color:red; margin-right:780px;  font-weight:bold" onclick="toggleContent3(event)">Body language</a> <br>
+
+                        <div id="content3" class="hidden-content" style="padding:0px 20px; display:none" >
+                            <h6 style="font-weight:bold; color:black; margin-right:790px; margin-top:30px">Top tips</h6>
+
+                                 <ul style="color:#000; text-align: justify; margin-left:75px;">
+                                    <li>Be yourself: if you adopt a new persona for the interview, the result is likely to be insincere and transparent.</li>
+                                    <li>Think about the impact of your voice i.e. the pace, tone and volume (for more information on making an impact see our pages on how to make a good first impression).</li>
+                                    <li>Think about the structure of your answers: you might summarise at the end rather than trailing off.</li>
+                                    <li>Honesty is the best policy – and if it is discovered later that you have been dishonest, you are very likely to be dismissed. Admitting, for example, to a period of poor motivation during your A-Levels shows more integrity than blaming someone else for poor grades, so don't feel that you should 'cover up' these incidents - present them positively as learning experiences.</li>
+                                    <li>Be prepared to talk: avoid 'yes/no' answers and expand as often as possible, but don't over-communicate or waffle. Take your cue from the interviewer. Ask, "should I continue?" or "does that answer your question?" if you are unsure whether you have said enough.</li>
+                                    <li>Ask for clarification if you need it, or request a moment's thinking time, before tackling a particularly difficult question. You might also take a sip of water to create a natural pause. This is better than saying the first thing that comes into your head.</li>
+                                    <li>Be balanced in your answers, and try not to sound too obsessive about any one aspect of your life.</li>
+                                    <li>It’s OK to make your interviewers smile or laugh, but don’t try to be a comedian with every answer you give – you need to show your professional side.</li>
+                                    <li>No-one is allowed, by law, to ask you about your marital status, ethnic background, disability, sexual orientation or religious affiliation, unless it is a bona fide occupational qualification, so be aware that you can politely decline to answer such questions</li>
+
+                                 </ul>
+                            <H6 style="font-weight:bold; margin-right:670px; margin-top:20px; color:black">Answering difficult questions</H6>
+                            <p style="color:#000; text-align: justify; margin-left:75px;">Questions often perceived as particularly difficult include those which appear to be an invitation to shoot yourself in the foot, such as: <a style="font-style:italic; font-size:14px"> what is your biggest weakness? What would you say has been your greatest failure?</a> When answering these questions relax, be honest, and emphasise the positive. These can be good opportunities to show that you understand yourself and that you’re proactive about working on yourself. Think about answers in advance so that you're not floundering on the day
+
+                            <p style="color:#000; text-align: justify; margin-left:75px;">Remember - no employer expects you to be completely perfect and self-awareness is preferable to blind arrogance! You might, for example, in answer to the question, “what is your biggest weakness?” say that, although you think well independently, you wouldn't be entirely happy in an environment where there was no teamwork; however you could then mention what coping strategies you would develop!
+                            <p style="color:#000; text-align: justify; margin-left:75px;">Or, you could tell them about your tendency to be nervous when presenting in front of large audiences and how, in an effort to overcome this, you have joined the debating society and now have strategies which help you communicate clearly to an audience when nervous.
+                            <p style="color:#000; text-align: justify; margin-left:75px;">Alternatively, you might say that your strengths lie in your ability to think problems through clearly, and that you can sometimes be frustrated with people who don't work logically, though you have learnt to appreciate the different insights that they can bring to a project.
+                            <p style="color:#000; text-align: justify; margin-left:75px;">These answers outline the weakness in each case, but turn the question around, so that you are able to stress both your strengths and your ability to learn from your mistakes.
+                            <p style="color:#000; text-align: justify; margin-left:75px;">Another line of questioning that can sometimes be daunting is if you are asked to think about yourself in a different way, so for example to compare yourself to an animal or biscuit (or colour, or piece of furniture). In this instance, think about the personal qualities that you want to emphasise in this situation, and explain your choice. A plain chocolate digestive might suggest a professionalism that a strawberry wafer possibly does not.
+                        </div>
+                        <hr style="width:1000px; margin-left:70px; ">
+
+                    </div>
+
+              </div>
+        </div>
+
+
+
+
+<script>
+  // Function to toggle the visibility of the content
+  function toggleContent(event) {
+    event.preventDefault();
+    var content = document.getElementById("content");
+    // Toggle the display style between 'none' and 'block'
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+
+  }
+
+   function toggleContent1(event) {
+    event.preventDefault();
+    var content1 = document.getElementById("content1");
+    // Toggle the display style between 'none' and 'block'
+    content1.style.display = content1.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function toggleContent2(event) {
+    event.preventDefault();
+    var content2 = document.getElementById("content2");
+    // Toggle the display style between 'none' and 'block'
+    content2.style.display = content2.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function toggleContent3(event) {
+    event.preventDefault();
+    var content3 = document.getElementById("content3");
+    // Toggle the display style between 'none' and 'block'
+    content3.style.display = content3.style.display === 'none' ? 'block' : 'none';
+  }
+  function toggleContent4(event) {
+    event.preventDefault();
+    var content4 = document.getElementById("content4");
+    // Toggle the display style between 'none' and 'block'
+    content4.style.display = content4.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+</body>

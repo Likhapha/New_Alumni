@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCT Career Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<style>
+
+        .rectangle {
+           padding:20px 3px;
+          display: inline-block;
+          width: 4px;
+          height: 30px;
+          background-color: #007bff; /* Blue color, you can change it to any color you want */
+        }
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-left:310px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-top:150px;
+            margin-left:320px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+      .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer p {
+      margin-bottom: 5px;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+{% include 'career/nav.html' %}
+<div id="pdf-container">
+
+   <div class="advice" style="background-color:#BDBDBD; width: 1500px; ">
+       <p><h4 style="color:#FAFAFA">Home > Students > Career Advice </h4>
+        <p></p>
+       <h2 style="padding:2px 5px"><span class="rectangle"> </span>Planning Your Career</h2>
+   </div>
+    <p style="font-size:20px; text-align: justify; font-size: 22px;">Not knowing where to start in deciding what career you want is very common and normal. There are a number of starting points and these will be different for different people. Choosing a career is not a once off process. One develops ideas in a series of steps. Careers are constructed over time, not chosen as a once off decision.</p>
+
+       <p style="font-size:22px; text-align: justify;"> Have a look at what you need to do at each stage of your time at LUCT:</p>
+     <iframe id="pdf" src="/static/10Reason.pdf" height="600px" frameborder="0"></iframe>
+
+  </div>
+
+
+
+<div class="related-content" style="background-color:#B0BEC5; margin-top: 50px; font-size: 22px;">
+  <h3>Related Content</h3>
+  <ul>
+    <li><a href="first" style="font-size:20px">First Year Student</a></li>
+    <li><a href="portal" style="font-size:20px">MyCareer Portal</a></li>
+  </ul>
+</div>
+
+ <div class="footer">
+    <p>&copy; 2024 LUCT Career Services. All rights reserved.</p>
+    <p>Contact us: careerservices@luct.edu</p>
+    <p class="social-icons">
+      <a href="https://www.facebook.com/luctcareerservices"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com/luctcareers"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/company/luctcareerservices"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/luctcareerservices"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/luctcareerservices"><i class="fab fa-youtube"></i></a>
+    </p>
+  </div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-item{
+
+}
+.form-inline {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes the search form to the far right */
+    margin-right: 20px; /* Ensure it's aligned with other elements */
+}

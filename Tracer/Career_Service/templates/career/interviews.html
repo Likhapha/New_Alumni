@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+   <title>LUCT Career Services</title>
+
+    <link rel="stylesheet" href="{% static 'stylesheet/navbar.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/download.png'%}">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<style>
+
+
+                .rectangle {
+                    padding:20px 3px;
+                    display: inline-block;
+                    width: 4px;
+                    height: 30px;
+                    background-color: #007bff; /* Blue color, you can change it to any color you want */
+                }
+
+
+                 body {
+                    height: 100%;
+                    margin: 0;
+                    overflow-x: hidden; /* Hide horizontal scroll bar */
+                }
+                .navigation {
+                    position: absolute;
+                    transform: translateY(-80%);
+                    z-index: 999;
+                }
+                .prev-page,
+                .next-page {
+                    background: rgba(255, 255, 255, 0.7);
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+           .dropdown .IT-menu {
+            display: none;
+            position: absolute;
+            background-color: #FAFAFA;
+            border-radius: 1px;
+            width:30%;
+            margin-top:8;
+            margin-left:-300px;
+        }
+
+           .dropdown .comm-menu {
+            display: none;
+            position: absolute;
+            background-color: #FAFAFA;
+            border-radius: 1px;
+            width:95%;
+            margin-top:20;
+        }
+
+
+        .dropdown:hover .IT-menu {
+            display: block;
+        }
+
+        .IT-menu li {
+            padding: 10px;
+        }
+
+        .IT-menu li a {
+            text-decoration: none;
+            color: #1A237E;
+            display: block;
+
+        }
+
+        .IT-menu li a:hover {
+            background-color: #;
+            border-radius: 5px;
+        }
+
+        .dropdown  .IT .text {
+            margin-left: -680px; /* Set margin-left as needed */
+        }
+        .dropdown  .comm .text {
+            margin-left: -770px; /* Set margin-left as needed */
+        }
+        .dropdown  .dis .text {
+            margin-left: -930px; /* Set margin-left as needed */
+        }
+
+        .dropdown  .arc .text {
+            margin-left: -750px; /* Set margin-left as needed */
+        }
+
+        .dropdown  .tou .text {
+            margin-left: -890px; /* Set margin-left as needed */
+        }
+
+       #pdf-container {
+            position: relative;
+            height: 100%;
+            position: relative;
+            margin-top:150px;
+        }
+
+
+    body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 100px;
+    }
+
+  .item {
+    text-align: center;
+  }
+
+  .item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container1 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  /* Style for the image */
+  .image {
+    width: 100%; /* Full width */
+    height: 600px; /* Maintain aspect ratio */
+  }
+
+  /* Style for the text */
+  .text1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    font-size: 24px; /* Adjust font size as needed */
+  }
+  </style>
+
+</head>
+<body>
+    {% include 'career/nav.html' %}
+
+<div id="pdf-container" style="margin-top:-340px; width:100%">
+   <div class="advice" style="background-color:#BDBDBD;padding:10px;margin-top:480px; ">
+       <p><h4 style="color:#FAFAFA">Home > Students > Making Applications </h4>
+        <p></p>
+     <h2 style="padding:2px 5px"><span class="rectangle"> </span> Interview Preparation</h2>
+   </div>
+
+
+  <div class="container1" style="width: 100%">
+  <img  src="https://t4.ftcdn.net/jpg/04/37/62/25/360_F_437622527_vnDRqQauFun1DVFc755H2bYjrzc3DYAy.jpg" alt="Image" class="image">
+  <div class="text1">
+    <h1 style="color:black; background-color:white; width: 500px; height:80px; align-content:center; opacity:60%; margin-top:-31  00px">Interviewing</h1>
+  </div>
+
+<div class="container" style="margin-left: 100px">
+
+  <div class="item" style="background-color:#CFD8DC; border-radius: 15px;width:400px ">
+      <a href="types-of-interviews" style="text-decoration:none; ">
+          <img src="https://img.freepik.com/premium-photo/cheerful-african-american-applicant-talking-job-interview-hr-comission_116547-5379.jpg" alt="Image 1">
+          <p style="color:black; font-size:25px">Types of Interviews</p>
+      </a>
+  </div>
+
+  <div class="item" style="background-color:#CFD8DC;border-radius: 15px;width:400px ">
+      <a href="techniques-of-interviews" style="text-decoration:none">
+        <img src="https://scontent.fmsu1-1.fna.fbcdn.net/v/t39.30808-6/438766683_847501360755217_9076847555674241526_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFOPolEQ1m_4nJtAY_C-YL_w6Dp-lu-W2jDoOn6W75baLMT33pgY4pLQAci6DT4BPGcPhge2s6N-Gcnf2NY6_UQ&_nc_ohc=bxGkuft6xdsQ7kNvgGGKyY4&_nc_ht=scontent.fmsu1-1.fna&oh=00_AYBDEo0pSiHHurtOB_gMcsFRbidiSu7-_P7FGeQQ4N1QqQ&oe=6668D1FB" alt="Image 2">
+        <p style="color:black; font-size:25px"> Interview Technique</p>
+      </a>
+  </div>
+  <div class="item" style="background-color:#CFD8DC; border-radius: 15px;width:400px">
+      <a href="your_link_here" style="text-decoration:none">
+        <img src="https://arthur.co.uk/wp-content/uploads/2020/12/zoom-sales-interview.jpg" alt="Image 3">
+        <p style="color:black; font-size:25px">Telephone and Video Interviews</p>
+      </a>
+  </div>
+  <div class="item"style="background-color:#CFD8DC; border-radius: 15px;width:400px">
+      <a href="your_link_here" style="text-decoration:none">
+        <img src="https://scontent.fmsu1-1.fna.fbcdn.net/v/t39.30808-6/409093532_807847721387248_5191598409304103268_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFtp4biCUvt-oCXPB9TbY-nmf3e3CmoY06Z_d7cKahjTgPW80AwYnxzJixoFhKaovI57X-ngWsICi4VHamUNzkd&_nc_ohc=kMMx-DL2bgsQ7kNvgFKX-56&_nc_ht=scontent.fmsu1-1.fna&oh=00_AYDk5OKvEDyUe3C1GWI6XHextwhIwv-P29cJyP8kvUAoqA&oe=6668C059" alt="Image 4">
+        <p style="color:black; font-size:25px">Legal Case Study Interviews</p>
+      </a>
+  </div>
+  <div class="item" style="background-color:#CFD8DC; border-radius: 15px;width:400px">
+      <a href="your_link_here" style="text-decoration:none">
+        <img src="https://scontent.fmsu1-1.fna.fbcdn.net/v/t39.30808-6/437886656_843366164502070_8973033293350648294_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH0HajP5ON9KGIwCcNUo3wvgIJpNTvTU9GAgmk1O9NT0XdZce8LV7JaatWnao2RmPAej82DN4l9rFfGkPmPn6Cu&_nc_ohc=KIZwwROxfY4Q7kNvgGd2sW5&_nc_ht=scontent.fmsu1-1.fna&oh=00_AYDHEBJKDAyOp5knYddMamiX54SXiPG13TDP9UKn7rM-ZA&oe=6668B6A8" alt="Image 5">
+        <p style="color:black; font-size:25px">Case Study Style Interviews</p>
+      </a>
+  </div>
+  <div class="item" style="background-color:#CFD8DC; border-radius: 15px;width:400px">
+      <a href="make-good-first" style="text-decoration:none">
+        <img src="https://scontent.fmsu1-1.fna.fbcdn.net/v/t39.30808-6/429789711_814042710767749_361361799556458604_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEaJe-6XlQntpF8FqXkn1OAKk9IQZtOYTYqT0hBm05hNraJAy75yAfujbZVM1AF9_QP5Fu79m_LJOcLqgy-GIZ3&_nc_ohc=FjokEctUv54Q7kNvgF9WdIR&_nc_ht=scontent.fmsu1-1.fna&oh=00_AYCmns52GCy-0IdFPCxMnDePKJUu5CqwUlwCH3g_YJgNag&oe=6668AB5D" alt="Image 6">
+        <p style="color:black; font-size:25px">Make a Good First Impression</p>
+      </a>
+  </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</div>
+</div>
+</body>
+</html>

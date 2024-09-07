@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Login</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/download.png'%}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+
+       .custom-btn {
+        border-radius: 25px;
+        margin-bottom: 10px; /* Space between buttons */
+        }
+        .login-btn {
+            width: 350px;
+            margin-left:40px;
+        }
+        .cancel-btn {
+            width: 350px;
+            margin-left:40px;
+        }
+        .container {
+            width: 500px;
+            background-color: #CFD8DC;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+             margin-bottom: 15px;
+        }
+
+        .col-form-label {
+            text-align: right;
+            margin-bottom: 0;
+            font-weight:bold;
+        }
+
+        .form-control {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <img src="{% static 'images/download.png' %}" alt="Logo" class="img-thumbnail" style="width: 200px; height:150px">
+            <h2>Current Students Login</h2>
+        </div>
+
+        <form method="post" action="{% url 'students-login' %}">
+           {% csrf_token %}
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">Username:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" name="username" style="width:300px; margin-left:40px">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="password" class="col-sm-2 col-form-label">Password:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password" style="width:300px; margin-left:40px">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary custom-btn login-btn">Login</button><br><br>
+            <a href="home" class="btn btn-secondary custom-btn cancel-btn">Cancel</a><br>
+            <label class="d-block text-center mt-3">Not have an account? <a href="verify_current_student">Register</a></label>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.0/classic/ckeditor.js"></script>
+</body>
+</html>

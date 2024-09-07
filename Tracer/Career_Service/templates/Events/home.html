@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Limkokwing University alums</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport">
+       <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+.navbar {
+  background-color: #333;
+  padding: 20px 40px; /* Increased padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 24px; /* Increased font size */
+  transform: translateX(-50%);
+}
+
+ .career-services-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 350px;
+    margin-top:-200px;
+
+  }
+
+  .career-services-btn:hover {
+    background-color: red;
+  }
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+   margin-left: 50px;
+   margin-bottom:-20px;
+   height:90px;
+}
+
+.nav-item {
+  margin-right: 30px; /* Increased margin */
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px; /* Increased font size */
+  transition: color 0.3s; /* Smooth transition */
+}
+
+.nav-item:hover .nav-link {
+  color: gold; /* Change color on hover */
+  cursor: pointer; /* Change cursor to hand */
+  align-items: flex-start;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  padding: 15px; /* Increased padding */
+}
+
+.dropdown-item {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0; /* Increased padding */
+  font-size: 16px; /* Increased font size */
+}
+
+.dropdown-item:hover {
+  color: gold; /* Change color on hover */
+  cursor: pointer; /* Change cursor to hand */
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px; /* Increased border radius */
+  margin-right: 10px; /* Increased margin */
+  font-size: 16px; /* Increased font size */
+  margin-bottom:-70px;
+}
+
+.navbar-search button {
+  padding: 10px 20px; /* Increased padding */
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Increased border radius */
+  cursor: pointer;
+  font-size: 16px; /* Increased font size */
+  margin-bottom:-70px;
+}
+
+.navbar-search button:hover {
+  background-color: #777;
+}
+
+/* Show dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.container-events {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left:100px;
+
+    }
+    .event-card {
+        width: calc(100% / 3); /* Adjust the width to fit three cards per row */
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 992px) {
+        .event-card {
+            width: calc(100% / 2); /* Adjust the width for smaller screens */
+        }
+    }
+
+    @media (max-width: 776px) {
+        .event-card {
+            width: 100%; /* Full width for extra small screens */
+        }
+    }
+
+   /* Styles for the "VIEW MORE" button */
+    .btn-view-more {
+        width:200;
+        display: inline-block;
+        padding: 8px 60px;
+        background-color: #ab003c;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-view-more:hover {
+        background-color: #0056b3;
+        color: #fff;
+    }
+   .card-img-top {
+        max-width: 100%; /* Ensure image fits within the card */
+        height: auto; /* Preserve aspect ratio */
+        border-radius: 10px 10px 0 0; /* Apply border radius to top corners */
+    }
+
+  .event-link {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit text color */
+      /* Ensure link takes up full width of card */
+    }
+
+
+.image-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width:10px;
+}
+
+/* Styles for the individual image-text wrapper */
+.image-text-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for the image */
+.image-text-wrapper img {
+    max-width: 70%;
+    height: auto;
+}
+
+.image-text-wrapper img {
+    max-width: 100%;
+    height: auto;
+    width: 500px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+</style>
+
+</head>
+<body>
+<nav class="navbar">
+
+  <div class="navbar-brand">
+    <img src="https://www.thereporter.co.ls/wp-content/uploads/2019/05/Limkokwing_Lesotho_Logo-1024x569.jpg"  class="logo-img" width="130" height="100">
+  </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle">Students</a>
+      <ul class="dropdown-menu">
+        <li><a href="#" class="dropdown-item">Student Resources</a></li>
+        <li><a href="#" class="dropdown-item">Student Profiles</a></li>
+        <li><a href="#" class="dropdown-item">Student Clubs</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle">Job Strategies</a>
+      <ul class="dropdown-menu">
+        <li><a href="#" class="dropdown-item">Resume Tips</a></li>
+        <li><a href="#" class="dropdown-item">Interview Techniques</a></li>
+        <li><a href="#" class="dropdown-item">Networking</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle">LEAP</a>
+      <ul class="dropdown-menu">
+        <a href="" id="entrepreneurship-tab" class="dropdown-item"  data-target="entrepreneurship-content">Entrepreneurship Events</a>
+          <li>
+            <a href="#" class="dropdown-item" id="toggle-images">Grow your Business Idea</a>
+          </li>
+           <hr>
+        <li>
+            <a href="#" id="internship-tab" class="dropdown-item" data-target="internship-content">Find Internship</a>
+        </li>
+           <li><a href="#" class="dropdown-item">Offer Internship</a></li>
+           <li><a href="#" class="dropdown-item">About Internship Office</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+        <a href="Events" id="events-tab" class="nav-link" data-toggle="collapse" data-target="#events-content">Events</a>
+    </li>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </ul>
+ </div>
+
+
+    <a href="Career-services">
+    <button  class="career-services-btn" >Career Services</button>
+    </a>
+
+
+<form class="navbar-search">
+    <input type="text" placeholder="Search">
+    <button type="submit">Search</button>
+</form>
+
+</nav>
+
+
+
+
+<div id="events-content" class="collapse">
+{% load static %}
+    <!-- Events content goes here -->
+    <div class="container mt-5">
+        <h1>Upcoming Events</h1>
+        <div class="container-events">
+            {% for EVENT in Events %}
+            <a href="" class="event-link">
+            <div class="event-card">
+             <div class="card">
+                  <div class="card event-card" style="width: 50%; flex-direction: column; justify-content: center;  align-items: center;  solid #ccc; background-color: #F5F5F5; border-radius: 20px;">
+                    <img src="{{ EVENT.image.url }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ EVENT.title }}</h3>
+                        <p class="card-text"><strong>Date:</strong> {{ EVENT.start_time|date:"F j, Y" }}-{{ EVENT.end_time|date:"F j, Y" }}</p>
+                        <p class="card-text"><strong>Time:</strong> {{ EVENT.start_time|time:"g:i A" }} - {{ EVENT.end_time|time:"g:i A" }}</p>
+                        <p class="card-text"><strong>Location:</strong> {{ EVENT.location }}</p>
+                        <p class="card-text"><strong>Organizer:</strong> {{ EVENT.organizer }}</p>
+                        <p class="card-text">{{ EVENT.description }}</p>
+                        <a href="View More" class="btn btn-view-more" style="width: 50%">VIEW MORE></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </a>
+         {% if forloop.counter|divisibleby:3 %}
+                </div><div class="row">
+            {% endif %}
+            {% endfor %}
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+<div id="entrepreneurship-content" class="collapse">
+<h1>Upcoming Entrepreneurship Events</h1>
+    {% load static %}
+     <div class="container-events">
+        <!-- Events content goes here -->
+         <div class="container mt-5">
+            {% for ENTREPRENEURSHIP in Entrepreneurships  %}
+                <a href="" class="event-link">
+                    <div class="event-card">
+                        <div class="card">
+                            <div class="card event-card" style="width: 100%; flex-direction: column; justify-content: center;  align-items: center;  solid #ccc; background-color: #F5F5F5; border-radius: 20px;">
+                                <img src="{{ ENTREPRENEURSHIP.Entrepreneurship_image.url }}" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h3 class="card-title">{{ ENTREPRENEURSHIP.Entrepreneurship_title }}</h3>
+                                        <p class="card-text"><strong>Date:</strong> {{ ENTREPRENEURSHIP.Entrepreneurship_start_time|date:"F j, Y" }}-{{ ENTREPRENEURSHIP.Entrepreneurship_end_time|date:"F j, Y" }}</p>
+                                        <p class="card-text"><strong>Time:</strong> {{ ENTREPRENEURSHIP.Entrepreneurship_start_time|time:"g:i A" }} - {{ ENTREPRENEURSHIP.Entrepreneurship_end_time|time:"g:i A" }}</p>
+                                        <p class="card-text"><strong>Location:</strong> {{ ENTREPRENEURSHIP.Entrepreneurship_location }}</p>
+                                        <p class="card-text"><strong>Organizer:</strong> {{ ENTREPRENEURSHIP.Entrepreneurship_organizer }}</p>
+                                        <p class="card-text">{{ ENTREPRENEURSHIP.Entrepreneurship_description }}</p>
+                                        <a href="#" class="btn btn-view-more" style="width: 50%">VIEW MORE></a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                 {% if forloop.counter|divisibleby:3 %}
+                             </div><div class="row">
+
+                 {% endif %}
+            {% endfor %}
+         </div>
+     </div>
+</div>
+
+
+
+<!-- Container for the images and text -->
+<div id="image-text-container" style="width: 100%; flex-direction: column; justify-content: center;  align-items: center;  solid #ccc; background-color: #F5F5F5; border-radius: 20px;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="image-text-wrapper">
+                <img src="https://www.alumni.ox.ac.uk/sites/default/files/styles/card_banner_image/public/alumni-icon-colour-jumpstart-your-idea.png?itok=fs9vqkMn" alt="Image 1">
+                <h3>Jump-start your idea</h3>
+                <h5>If you have a business idea or are starting a startup, Enterprising Limkokwing</h5>
+                    <h5>has plenty of resources to support you on your journey.</h5>
+                <a href="View More" class="btn btn-view-more" style="width: 20%">Go Now ></a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-text-wrapper">
+                <img src="https://www.alumni.ox.ac.uk/sites/default/files/styles/card_banner_image/public/alumni-icon-colour-entrepreneurial-events.png?itok=XE-vQofh" alt="Image 2">
+                <h3>Entrepreneurial events</h3>
+                <h5>Check out the calendar of business and entrepreneurial events held across Limkokwing.</h5>
+                <a href="View More" class="btn btn-view-more" style="width: 20%">Go Now ></a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="image-text-wrapper">
+                <img src="https://www.alumni.ox.ac.uk/sites/default/files/styles/card_banner_image/public/alumni-icon-colour-get-networking.png?itok=LjLAHcjN" alt="Image 3">
+                 <h3>Get networking</h3>
+                <h5>Join the Limkokwing Entrepreneurship Accelerator Platform (LEAP) to meet</h5>
+                <h5>and network with other Malaysians interested in the startup world.</h5>
+                <a href="View More" class="btn btn-view-more" style="width: 20%">Go Now ></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <!-- Internship Opportunities -->
+    <div id="internship-content">
+    <div>
+        <img src="https://www.studentsbazaar.in/wp-content/uploads/2017/03/assured-placements.png" alt="Internship Opportunities">
+        <h3>Internship Opportunities</h3>
+        <h5>Explore a comprehensive list of internship opportunities</h5>
+        <h5>tailored to your field of study or career interests.</h5>
+    </div>
+
+    <!-- Internship Search Tips -->
+    <div>
+        <img src="data:image/jpeg;base64,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" alt="Internship Search Tips">
+        <h3>Internship Search Tips</h3>
+        <h5>Discover effective strategies for searching and applying for internships, including</h5>
+        <h5>resume and cover letter tips, networking advice, and utilizing online resources.</h5>
+    </div>
+
+    <!-- Industry Insights -->
+    <div>
+        <img src="https://www.studentsbazaar.in/wp-content/uploads/2017/03/excellent-training.png" alt="Industry Insights">
+        <h3>Industry Insights</h3>
+        <h5>Gain valuable insights into various industries and sectors, including</h5>
+        <h5>industry trends, skills in demand, and potential career paths.</h5>
+    </div>
+
+
+    <!-- Success Stories-->
+    <div>
+        <img src="https://www.iraiser.com/wp-content/uploads/2023/03/icon-test-200x200.png" alt="Success Stories/Testimonials">
+        <h3>Success Stories</h3>
+        <h5>Read inspiring success stories and testimonials from alums who</h5>
+        <h5>have secured internships through the tracer study system.</h5>
+    </div>
+
+    <!-- Networking Opportunities -->
+    <div>
+        <img src="https://www.iraiser.com/wp-content/uploads/2023/03/icon-increase-200x200.png" alt="Networking Opportunities">
+        <h3>Networking Opportunities</h3>
+        <h5>Participate in networking events, webinars, or alumni groups to connect</h5>
+        <h5>with professionals in your field and discover internship opportunities.</h5>
+    </div>
+
+    <!-- FAQs and Support -->
+    <div>
+        <img src="https://st2.depositphotos.com/1157537/11133/v/950/depositphotos_111336508-stock-illustration-faq-icon-sign-vector-blue.jpg" alt="FAQs and Support">
+        <h3>FAQs and Support</h3>
+        <h5>Find answers to frequently asked questions about internships and receive</h5>
+        <h5>support and guidance throughout the internship search process.</h5>
+    </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const eventsTab = document.getElementById("events-tab");
+    const entrepreneurshipTab = document.getElementById("entrepreneurship-tab");
+    const eventsContent = document.getElementById("events-content");
+    const entrepreneurshipContent = document.getElementById("entrepreneurship-content");
+    const toggleImagesButton = document.getElementById("toggle-images");
+    const imageContainer = document.getElementById("image-text-container");
+    const internshipTab = document.getElementById("internship-tab");
+    const internshipContent = document.getElementById("internship-content");
+
+    // Initially hide both content sections and image container
+    eventsContent.style.display = "none";
+    entrepreneurshipContent.style.display = "none";
+    imageContainer.style.display = "none";
+    internshipContent.style.display = "none";
+
+    eventsTab.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Show events content and hide entrepreneurship and internship content
+        eventsContent.style.display = "block";
+        entrepreneurshipContent.style.display = "none";
+        internshipContent.style.display = "none";
+        imageContainer.style.display = "none";
+    });
+
+    entrepreneurshipTab.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Show entrepreneurship content and hide events and internship content
+        entrepreneurshipContent.style.display = "block";
+        eventsContent.style.display = "none";
+        internshipContent.style.display = "none";
+        imageContainer.style.display = "none";
+    });
+
+    internshipTab.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Show internship content and hide events and entrepreneurship content
+        internshipContent.style.display = "block";
+        eventsContent.style.display = "none";
+        entrepreneurshipContent.style.display = "none";
+        imageContainer.style.display = "none";
+    });
+
+    toggleImagesButton.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        // Toggle the display of the image container
+        if (imageContainer.style.display === "none") {
+            imageContainer.style.display = "block";
+            internshipContent.style.display = "none";
+            entrepreneurshipContent.style.display = "none";
+            eventsContent.style.display = "none";
+        } else {
+            imageContainer.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

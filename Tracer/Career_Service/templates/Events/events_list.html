@@ -1,0 +1,24 @@
+<!-- events/templates/events/event_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event List</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <ul>
+        {% for event in events %}
+            <li>
+                <img src="{{ event.image.url }}" alt="{{ event.title }}" width="100">
+                <h2>{{ event.title }}</h2>
+                <p><strong>Date:</strong> {{ event.start_time|date:"F j, Y" }}</p>
+                <p><strong>Time:</strong> {{ event.start_time|time:"g:i A" }} - {{ event.end_time|time:"g:i A" }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Organizer:</strong> {{ event.organizer }}</p>
+                <p>{{ event.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

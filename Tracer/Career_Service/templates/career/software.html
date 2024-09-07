@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCT Career Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-iQCkDfPRwsA3kJDj02z1lWIA5fPFh1zSflHj7v3T2sV96d8hX3JCDusO1RW6qlTBR3fWnqHj7UjTCH21NYoy+w==" crossorigin="anonymous" />
+
+  <style>
+ #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-left:310px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+
+
+   .dropdown .IT-menu {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+    width:30%;
+    margin-top:8;
+    margin-left:-300px;
+}
+
+   .dropdown .comm-menu {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+    width:95%;
+    margin-top:20;
+}
+
+
+.dropdown:hover .IT-menu {
+    display: block;
+}
+
+.IT-menu li {
+    padding: 10px;
+}
+
+.IT-menu li a {
+    text-decoration: none;
+    color: #1A237E;
+    display: block;
+
+}
+
+.IT-menu li a:hover {
+    background-color: #;
+    border-radius: 5px;
+}
+
+.dropdown  .IT .text {
+    margin-left: -680px; /* Set margin-left as needed */
+}
+.dropdown  .comm .text {
+    margin-left: -770px; /* Set margin-left as needed */
+}
+.dropdown  .dis .text {
+    margin-left: -930px; /* Set margin-left as needed */
+}
+
+.dropdown  .arc .text {
+    margin-left: -750px; /* Set margin-left as needed */
+}
+
+.dropdown  .tou .text {
+    margin-left: -890px; /* Set margin-left as needed */
+}
+
+
+.custom-btn {
+  background-color:#0000FF;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  width:1000px;
+  height:30px
+  cursor: pointer;
+  border-radius:10px;
+  justify:space-between;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.custom-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 20px;
+  width:1000px;
+}
+
+/* Links inside the dropdown */
+.custom-dropdown-content p {
+  color: black;
+}
+
+/* Show the dropdown menu */
+.show {
+  display: block;
+}
+.navbar {
+      color: #ffffff; /* Text color */
+      font-size: 18px; /* Increased font size */
+      position: fixed;
+      width:100%;
+      height:20%;
+      top:0;
+      z-index: 1000;
+    }
+
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+        display: block;
+
+    }
+
+    .navbar-nav{
+       margin-bottom:-120px;
+       position: fixed;
+       background-color:;
+       width:100%;
+       fixed-point:0;
+       padding:10px 100px;
+        z-index: 1000;
+    }
+    .navbar-nav .nav-link {
+      color: #ffffff !important; /* Text color */
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important; /* Text color on hover */
+    }
+    .navbar-toggler-icon {
+      background-color: #ffffff; /* Color of the toggler icon */
+    }
+    .dropdown-menu {
+      background-color: #343a40; /* Dropdown background color */
+    }
+    .dropdown-menu .dropdown-item {
+      color: #ffffff; /* Dropdown item text color */
+    }
+
+
+.navbar-brand {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+}
+}
+.logo-link {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    text-decoration: none;
+    color: black;
+}
+
+
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-top:150px;
+            margin-left:300px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+  </style>
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="navbar-brand" >
+     <a href="https://www.limkokwing.net/lesotho/about/campus/" target="_blank">
+    <img src="https://www.thereporter.co.ls/wp-content/uploads/2019/05/Limkokwing_Lesotho_Logo.jpg" class="logo-img" width="150" height="90" padding="10px 50px">
+</a>
+     <span class="logo-text" style="padding:0px 20px"><h2>Career Services</h2></span>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="Career-services">Home</a>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="students" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Students
+        </a>
+        <div class="dropdown-menu" aria-labelledby="jobSearchDropdown">
+          <a class="dropdown-item" href="#">Welcome</a>
+          <a class="dropdown-item" href="career-advice">Career Advice</a>
+          <a class="dropdown-item" href="my_degree">Considering Your Future</a>
+          <a class="dropdown-item" href="Making_applications">Making Applications</a>
+           <a class="dropdown-item" href="#">Prospective Students</a>
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="jobSearchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Entrepreneurship
+        </a>
+        <div class="dropdown-menu" aria-labelledby="jobSearchDropdown">
+          <a class="dropdown-item" href="#">Support For Student Entrepreneur</a>
+          <a class="dropdown-item" href="#">Programmes and Events</a>
+          <a class="dropdown-item" href="#">LUCT Student Entrepreneurship week</a>
+          <a class="dropdown-item" href="#">Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Graduates
+        </a>
+        <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+          <a class="dropdown-item" href="#">Continuing Your Career Journey </a>
+          <a class="dropdown-item" href="#">Careers Our Graduates are Pursuing</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Employers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+          <a class="dropdown-item" href="#">Register With LUCT Career Service</a>
+          <a class="dropdown-item" href="#">Advertise Jobs and Opportunities</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="supportDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Faculties And Departments
+        </a>
+        <div class="dropdown-menu" aria-labelledby="supportDropdown">
+          <a class="dropdown-item" href="#">Faculty of Design and Innovation</a>
+          <a class="dropdown-item" href="#">Faculty of Tourism and Hospitality</a>
+          <a class="dropdown-item" href="#">Faculty of Business and Globalization</a>
+          <a class="dropdown-item" href="#">Faculty of Architecture and Built Environment</a>
+          <a class="dropdown-item" href="#">Faculty of Communication Media and Technology</a>
+          <a class="dropdown-item" href="#">Faculty of Information and Communication and Technology</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+   <a href="{% url 'home' %}" class="btn btn-light fw-bold" style="margin-top:-90px; font-size:10px; margin-right:90px">LIMKOKWING UNIVERSITY ALUMNI</a>
+</nav>
+
+<div id="pdf-container" style="margin-top:160px">
+   <div class="advice" style="background-color:#BDBDBD; ">
+       <p><h4 style="color:#FAFAFA">Home > Faculties and Departments > Information, Communication and Technology </h4>
+
+       <p><h3 style="color:#; margin-left:10px">Software Engineering and Multimedia</h3>
+   </div>
+
+    <h4 style="">Software Engineering Programmes at LUCT</h4>
+    <p style="font-size:20px">The following qualifications are available in Software Engineering. Please consult the webpages for <a href="https://www.limkokwing.net/lesotho/academic/courses_details/bachelor-of-science-in-software-engineering-with-multimedia" target="_blank"> <span style="color:blue; text-decoration: none"> BSC in Software Engineering</span></a> and <a href="https://www.limkokwing.net/lesotho/academic/courses_details/diploma_in_multimedia_and_software_engineering" target="_blank"> <span style="color:blue; text-decoration: none"> Diploma in Software Engineering</span></a> for more detailed descriptions, admission requirements and Career Opportunities</p>
+
+       <p><h4>Postgraduate Qualifications</h4>
+    <ul>
+        <li style="font-size: 20px;">Bachelor of Science in Software Engineering and Multimedia.</li>
+        <li style="font-size: 20px;">Diploma in Multimedia and Software Engineering </li>
+    </ul>
+
+<div class="custom-dropdown">
+  <button class="custom-btn" onclick="toggleDropdown(1)">  <span class="text" style="margin-left:-490px; padding:5px 480px; font-weight:bold">PROFESSIONAL BODIES AND ASSOCIATIONS</span> <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 24 24"  width="35" ><path d="M0 0h24v24H0z" fill="none" color="white"/><path d="M7 10l5 5 5-5z"/></svg> </button>
+  <div class="custom-dropdown-content" style="font-size: 20px; padding:10px;" id="dropdownContent1">
+    <p style="color:blue; font-weight:bold; font-size:18px"> <a href="https://www.cbs.co.ls/" target="_blank"> <span style="color:blue; text-decoration: none"> Computer Society of Lesotho (CSL):</span></a></p>
+    CSL aims to advance computing as a science and profession in Lesotho. It provides a platform for professionals, academics, and students to network, share knowledge, and collaborate on projects related to computing and technology.
+    <p></p>
+    <p style="color:blue; font-weight:bold; font-size:18px"> <a href="https://www.iitpsa.org.za/" target="_blank"> <span style="color:blue; text-decoration: none"> Institute of Information Technology Professionals South Africa (IITPSA):</span></a></p>
+    The IITPSA is a South African professional body for IT professionals. It provides networking opportunities, professional development, and industry recognition
+    <p></p>
+    <p style="color:blue; font-weight:bold; font-size:18px">  <a href="https://www.iacsit.org/" target="_blank"> <span style="color:blue; text-decoration: none">International Association of Computer Science and Information Technology (IACSIT):</span></a></p>
+    IACSIT is a registered international scientific association of distinguished scholars engaged in Computer Science and Information Technology. The IACSIT members include research and development center heads, faculty deans, department heads, professors, research scientists, engineers, scholars, experienced software development directors, managers and engineers, university postgraduate and undergraduate engineering and technology students, etc.
+    <p></p>
+    <p style="color:blue; font-weight:bold; font-size:18px">  <a href="https://www.acm.org/" target="_blank"> <span style="color:blue; text-decoration: none"> Association for Computing Machinery (ACM):</span></a></p>
+     ACM is the world's largest computing society, serving professionals and students in the computing field. It offers access to cutting-edge research, publications, conferences, and special interest groups covering various aspects of computing, including software engineering.
+
+  </div>
+</div>
+
+<div class="custom-dropdown" style="margin-top:30px">
+  <button class="custom-btn" onclick="toggleDropdown(2)">  <span class="text" style="margin-left:-730px; padding:5px 730px; font-weight:bold">SECTOR INSIGHTS</span> <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 24 24"  width="35" ><path d="M0 0h24v24H0z" fill="none" color="white"/><path d="M7 10l5 5 5-5z"/></svg> </button>
+  <div class="custom-dropdown-content" style="font-size: 20px;" id="dropdownContent2">
+    <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://www.computerweekly.com/" target="_blank"> <span style="color:blue; text-decoration: none">Computer Weekly</span></a></p>
+      Computer Weekly provides industry updates, expert opinions, case studies, and in-depth articles to keep professionals informed about the latest trends and developments in the technology sector.
+     <p></p>
+    <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://softwareengineeringdaily.com/" target="_blank"> <span style="color:blue; text-decoration: none">Software Engineering Daily</span></a></p>
+      The Software Engineering Daily podcast provides daily interviews and discussions with software engineers, developers, and industry experts. It covers a wide range of topics related to software engineering, including technology trends, programming languages, and career advice.
+    <p></p>
+    <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://softwareengineeringdaily.com/" target="_blank"> <span style="color:blue; text-decoration: none">The Software Engineering Institute (SEI):</span></a></p>
+  </div>
+</div>
+
+<div class="custom-dropdown" style="margin-top:30px">
+  <button class="custom-btn" onclick="toggleDropdown(3)">  <span class="text" style="margin-left:-580px; padding:5px 570px; font-weight:bold">PREPARING FOR THE JOB MARKET</span> <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 24 24"  width="35" ><path d="M0 0h24v24H0z" fill="none" color="white"/><path d="M7 10l5 5 5-5z"/></svg> </button>
+  <div class="custom-dropdown-content" style="font-size: 20px;" id="dropdownContent3">
+
+    <h5>Graduate Vacancies KEY RESOURCE</h5>
+     Access graduate jobs and internships in the vacancy section of our site. Be sure to set up job email alerts and check our website regularly for news and events.
+    <p></p>
+    <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://www.pnet.co.za/jobs/in-lesotho" target="_blank"> <span style="color:blue; text-decoration: none">PNet </span></a></p>
+    PNet is a leading job portal that connects job seekers with employers across various industries in South Africa and other African countries, including Lesotho
+    <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://www.indeed.com/" target="_blank"> <span style="color:blue; text-decoration: none">Indeed</span></a></p>
+    Indeed is a popular job search website that aggregates job listings from various sources, including company websites, job boards, and recruitment agencies.
+    <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://www.gov.ls/" target="_blank"> <span style="color:blue; text-decoration: none">Lesotho Government Portal</span></a></p>
+    Lesotho Government Portal - Public Service Recruitment: The official website of the Government of Lesotho often advertises job vacancies in various sectors, including government departments and agencies.
+     <p style="color:blue; font-weight:bold; font-size:18px"><a href="https://www.linkedin.com/jobs/lesotho-jobs" target="_blank"> <span style="color:blue; text-decoration: none">LinkedIn Jobs - Lesotho</span></a></p>
+     LinkedIn is a professional networking platform where companies often post job vacancies. You can search for jobs using relevant keywords and filters, as well as connect with recruiters and professionals in your industry.
+
+
+  </div>
+</div>
+
+
+<div class="custom-dropdown" style="margin-top:30px">
+  <button class="custom-btn" onclick="toggleDropdown(4)">  <span class="text" style="margin-left:-350px; padding:5px 330px; font-weight:bold">INTERNATIONAL & LOCAL VOLUNTEERING OPPORTUNITIES</span> <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 24 24"  width="35" ><path d="M0 0h24v24H0z" fill="none" color="white"/><path d="M7 10l5 5 5-5z"/></svg> </button>
+  <div class="custom-dropdown-content" style="font-size: 20px;" id="dropdownContent4">
+
+  </div>
+</div>
+
+<div class="custom-dropdown" style="margin-top:30px">
+  <button class="custom-btn" onclick="toggleDropdown(5)">  <span class="text" style="margin-left:-530px; padding:5px 510px; font-weight:bold">POSTGRADUATE STUDY AND RESEARCH</span> <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 24 24"  width="35" ><path d="M0 0h24v24H0z" fill="none" color="white"/><path d="M7 10l5 5 5-5z"/></svg> </button>
+  <div class="custom-dropdown-content" style="" id="dropdownContent5">
+  </div>
+</div>
+
+<div class="custom-dropdown" style="margin-top:30px">
+  <button class="custom-btn" onclick="toggleDropdown(6)">  <span class="text" style="margin-left:-500px; padding:5px 490px; font-weight:bold">COMPETITIONS AND ENTREPRENEURSHIP</span> <svg xmlns="http://www.w3.org/2000/svg" height="" viewBox="0 0 24 24"  width="35" ><path d="M0 0h24v24H0z" fill="none" color="white"/><path d="M7 10l5 5 5-5z"/></svg> </button>
+  <div class="custom-dropdown-content" style="font-size: 20px;" id="dropdownContent6">
+
+  </div>
+
+   <div class="related-content" style="background-color:#B0BEC5; margin-top: 50px; font-size: 20px;">
+  <h3>Related Content</h3>
+  <ul>
+    <li><a href="information">Information Technology</a></li>
+    <li><a href="business">Business Information Technology</a></li>
+  </ul>
+</div>
+
+</div>
+
+
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <script>
+function toggleDropdown(dropdownNumber) {
+  var dropdownContent = document.getElementById("dropdownContent" + dropdownNumber);
+  if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    resetDropdownPositions(dropdownNumber);
+  } else {
+    dropdownContent.style.display = "block";
+    adjustDropdownPositions(dropdownNumber);
+  }
+}
+
+function adjustDropdownPositions(dropdownNumber) {
+  var dropdownsBelow = document.querySelectorAll('.custom-dropdown:nth-child(n+' + dropdownNumber + ')');
+  dropdownsBelow.forEach(function(dropdown, index) {
+    if (index === dropdownNumber ) { // If it's the second dropdown
+      dropdown.style.marginTop = (dropdown.offsetHeight + 550) + "px"; // Adjust as needed to create space for content
+    }
+
+  });
+}
+
+function resetDropdownPositions(dropdownNumber) {
+  var dropdownsBelow = document.querySelectorAll('.custom-dropdown:nth-child(n+' + dropdownNumber + ')');
+  dropdownsBelow.forEach(function(dropdown) {
+    dropdown.style.marginTop = "20px"; // Reset margin to original value
+  });
+}
+</script>
+
+
+</body>
+</html>

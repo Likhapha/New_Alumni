@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCT Career Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-left:310px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+
+
+   .dropdown .IT-menu {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+    width:30%;
+    margin-top:8;
+    margin-left:-300px;
+}
+
+   .dropdown .comm-menu {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+    width:95%;
+    margin-top:20;
+}
+
+
+.dropdown:hover .IT-menu {
+    display: block;
+}
+
+.IT-menu li {
+    padding: 10px;
+}
+
+.IT-menu li a {
+    text-decoration: none;
+    color: #1A237E;
+    display: block;
+
+}
+
+.IT-menu li a:hover {
+    background-color: #;
+    border-radius: 5px;
+}
+
+.dropdown  .IT .text {
+    margin-left: -680px; /* Set margin-left as needed */
+}
+.dropdown  .comm .text {
+    margin-left: -770px; /* Set margin-left as needed */
+}
+.dropdown  .dis .text {
+    margin-left: -930px; /* Set margin-left as needed */
+}
+
+.dropdown  .arc .text {
+    margin-left: -750px; /* Set margin-left as needed */
+}
+
+.dropdown  .tou .text {
+    margin-left: -890px; /* Set margin-left as needed */
+}
+
+
+       #pdf-container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-top:150px;
+            margin-left:320px;
+
+        }
+        #pdf {
+            width: 70%;
+
+        }
+
+         body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Set desired font family */
+            overflow-x: hidden; /* Hide horizontal scroll bar */
+        }
+  </style>
+
+</head>
+<body>
+
+
+
+{% include 'career/nav.html' %}
+
+<div id="pdf-container" style="margin-top:160px">
+   <div class="advice" style="background-color:#BDBDBD; ">
+       <p><h4 style="color:#FAFAFA">Home > Students > Considering Your Future </h4>
+        <p></p>
+       <p><h2 style="color:#; margin-left:10px">Options With My Educational Qualifications</h2>
+   </div>
+    <p STYLE="font-size: 22px; align: justify">Remember that you have many more options with your degree than you may first imagine. Some options with your degree may be obviously linked to what you have studied, but many undergraduate jobs require a cluster of skills that are not necessarily subject knowledge based. Such skills can be developed in many contexts, not just through your academics. Look here to find out more.</p>
+
+       <p style="font-size: 22px; align: justify;padding:10px">We have compiled a list of useful sector sites, ideas for voluntary work, further study ideas and work opportunities for you to explore that are related to your area of study. So start with these, but if nothing appeals to you, know that these are not your only options:</p>
+
+<div class="dropdown-container">
+  <div class="dropdown" >
+    <a class="IT dropdown-toggle" href="#" id="Info" role="button" data-toggle="line" aria-haspopup="true" aria-expanded="false" style="background-color:#2962FF; color:white; width:98%; height:50px; font-weight:bold; font-size:26;border-radius: 10px; padding: 15px 700px; text-decoration: none; ">
+      <span class="text">INFORMATION, COMMUNICATION AND TECHNOLOGY</span>
+    </a>
+    <ul class="IT-menu" style="font-size: 20px;">
+        <li><span class="bullet" style="color:white;"></span> <a href="software" class="menu-item">Software Engineering</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="business" class="menu-item">Business IT</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="information" class="menu-item">Information Technology</a></li>
+
+    </ul>
+</div>
+</div>
+
+  <div class="dropdown-container" style="margin-top:50px">
+  <div class="dropdown" >
+    <a class="comm dropdown-toggle" href="#" id="Infor" role="button" data-toggle="line" aria-haspopup="true" aria-expanded="false" style="background-color:#2962FF; color:white; width:98%; height:50px; font-weight:bold; font-size:26;border-radius: 10px; padding: 15px 780px; text-decoration: none; ">
+      <span class="text">COMMUNICATION MEDIA AND TECHNOLOGY</span>
+    </a>
+    <ul class="IT-menu" style="font-size: 20px;">
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Journalism</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Film Production</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Events Management</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Public Relations</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Broadcasting (Radio & TV)</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Broadcasting and Journalism</a></li>
+
+    </ul>
+</div>
+</div>
+
+  <div class="dropdown-container" style="margin-top:50px">
+  <div class="dropdown" >
+    <a class="dis dropdown-toggle" href="#" id="Inform" role="button" data-toggle="line" aria-haspopup="true" aria-expanded="false" style="background-color:#2962FF; color:white; width:98%; height:50px; font-weight:bold; font-size:26;border-radius: 10px; padding: 15px 935px; text-decoration: none; ">
+      <span class="text">DESIGN AND INNOVATION</span>
+    </a>
+    <ul class="IT-menu" style="font-size: 20px;">
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Graphic Design</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Creative Advertising</a></li>
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item"> Fashion and Apparel Design</a></li>
+
+    </ul>
+</div>
+</div>
+
+   <div class="dropdown-container" style="margin-top:50px">
+  <div class="dropdown" >
+    <a class="arc dropdown-toggle" href="#" id="Informa" role="button" data-toggle="line" aria-haspopup="true" aria-expanded="false" style="background-color:#2962FF; color:white; width:98%; height:50px; font-weight:bold; font-size:26;border-radius: 10px; padding: 15px 760px; text-decoration: none; ">
+      <span class="text">ARCHITECTURE AND BUILDING ENVIRONMENT</span>
+    </a>
+    <ul class="IT-menu" style="font-size: 20px;">
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Architecture Technology</a></li>
+      </ul>
+</div>
+</div>
+
+<div class="dropdown-container" style="margin-top:50px">
+  <div class="dropdown" >
+    <a class="tou dropdown-toggle" href="#" id="Informat" role="button" data-toggle="line" aria-haspopup="true" aria-expanded="false" style="background-color:#2962FF; color:white; width:98%; height:50px; font-weight:bold; font-size:26;border-radius: 10px; padding: 15px 905px; text-decoration: none; ">
+      <span class="text">TOURISM AND HOSPITALITY</span>
+    </a>
+    <ul class="IT-menu" style="font-size: 20px;">
+        <li><span class="bullet" style="color:white;"></span> <a href="#" class="menu-item">Tourism Management</a></li>
+      </ul>
+</div>
+</div>
+
+<div class="related-content" style="background-color:#B0BEC5; margin-top: 50px; font-size: 20px;">
+  <h3>Related Content</h3>
+  <ul>
+    <li><a href="">Identifying Skills</a></li>
+  </ul>
+</div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    });
+</script>
+</body>
+</html>

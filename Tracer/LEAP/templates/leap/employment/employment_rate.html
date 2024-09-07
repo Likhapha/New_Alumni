@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employment Rate - LEAP Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/download.png' %}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 1.5rem;
+            border-bottom: 0;
+            border-radius: 15px 15px 0 0;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .metric-description {
+            color: #6c757d;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        .stats-container {
+            margin-top: 2rem;
+        }
+        .stats-item {
+            margin-bottom: 1rem;
+        }
+        .stats-item i {
+            font-size: 2rem;
+            color: #007bff;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Navigation Tabs */
+        .nav-tabs {
+            margin-top: 2rem;
+        }
+        .nav-tabs .nav-link {
+            border-radius: 0.5rem;
+        }
+        .nav-tabs .nav-link.active {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .tab-content {
+            margin-top: 1rem;
+        }
+
+        .container {
+            width: 95%
+        }
+    </style>
+
+      <script>
+        function loadAnalysis(facultyCode) {
+            // Fetch the chart URL from the Django view
+            fetch(`/faculty-analysis-chart/${facultyCode}/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Update the chart container with the new chart
+                    const container = document.getElementById('analysis-chart-container');
+                    container.innerHTML = `<img src="${data.chart_url}" alt="Faculty Analysis Chart">`;
+                })
+                .catch(error => console.error('Error fetching chart:', error));
+        }
+      </script>
+</head>
+<body>
+
+    <!-- Header Navigation (Optional) -->
+    {% include 'leap/root_templates/navbar.html' %}
+
+    <!-- Employment Rate Section -->
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Employment Rate
+            </div>
+            <div class="card-body">
+                <!-- Main Metric Display -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="metric-value">85%</h2>
+                        <p class="metric-description">Graduates employed within 6 months</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="employmentRateChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Detailed Statistics -->
+                <div class="stats-container">
+                    <h4 class="mb-3">Additional Insights</h4>
+                    <div class="row">
+                        <div class="col-md-4 stats-item">
+                            <i class="fas fa-briefcase"></i>
+                            <h5>Top Industries</h5>
+                            <p>Tech, Finance, Education</p>
+                        </div>
+                        <div class="col-md-4 stats-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <h5>Average Time to Employment</h5>
+                            <p>3 months</p>
+                        </div>
+                        <div class="col-md-4 stats-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h5>Year-over-Year Growth</h5>
+                            <p>+5% increase from last year</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison with Previous Years -->
+                <div class="mt-5">
+                    <h4>Employment Rate Comparison</h4>
+                    <canvas id="employmentComparisonChart"></canvas>
+                </div>
+
+                <div class="mt-4">
+                    <p>The employment rate has shown a steady increase over the past few years, reflecting the effectiveness of our career services and the growing demand for our graduates in various industries. Recent improvements in our curriculum and career support programs are contributing to this positive trend.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tracer Study Navigation Section -->
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Tracer Study Analysis Navigation
+            </div>
+            <div class="card-body">
+                <!-- Navigation Tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#overview">Overview</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tab2" data-bs-toggle="tab" href="#faculty-analysis">Analysis by Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab3" data-bs-toggle="tab" href="#faculty-comparison">Faculty Comparisons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab4" data-bs-toggle="tab" href="#program-employment">Program Employment Rates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab5" data-bs-toggle="tab" href="#industry">Industry Trends</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab6" data-bs-toggle="tab" href="#education">Education Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab7" data-bs-toggle="tab" href="#skills">Skills Analysis</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="faculty-analysis">
+                        <h5 class="mt-3">Analysis by Faculty</h5>
+                        <p>Content for the analysis by faculty section. Include charts, graphs, and key insights for each faculty.</p>
+                        <div class="card-body" style="margin-top:-20px">
+                            <div class="btn-group" role="group" aria-label="Faculty Analysis">
+                                <button type="button" class="btn btn-primary me-5" onclick="loadAnalysis('FABE')">FABE</button>
+                                <button type="button" class="btn btn-primary me-5" onclick="loadAnalysis('FDI')">FDI</button>
+                                <button type="button" class="btn btn-primary me-5" onclick="loadAnalysis('FICT')">FICT</button>
+                                <button type="button" class="btn btn-primary me-5" onclick="loadAnalysis('FCMB')">FCMB</button>
+                                <button type="button" class="btn btn-primary me-5" onclick="loadAnalysis('FCTH')">FCTH</button>
+                                <button type="button" class="btn btn-primary" onclick="loadAnalysis('FBG')">FBG</button>
+                            </div>
+
+                            <!-- Placeholder for the analysis chart -->
+                            <div class="mt-4" id="analysis-chart-container">
+                                <!-- Chart will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="faculty-comparison">
+                        <h5 class="mt-3">Faculty Comparisons</h5>
+                        <p>Content for the faculty comparisons section. Compare employment rates, average salaries, and other metrics across different faculties.</p>
+                    </div>
+                    <div class="tab-pane fade" id="program-employment">
+                        <h5 class="mt-3">Program Employment Rates</h5>
+                        <p>Content for the program employment rates section. Display employment rates for each program within each faculty.</p>
+                    </div>
+                    <div class="tab-pane fade show active" id="overview">
+                        <h5 class="mt-3">Overview</h5>
+                        <p>Content for the overview section. Provide a summary of key findings and insights related to the tracer study.</p>
+                    </div>
+                    <div class="tab-pane fade" id="industry">
+                        <h5 class="mt-3">Industry Trends</h5>
+                        <p>Content for the industry trends section. Discuss trends in different industries where graduates are employed.</p>
+                    </div>
+                    <div class="tab-pane fade" id="education">
+                        <h5 class="mt-3">Education Impact</h5>
+                        <p>Content for the education impact section. Analyze how different educational backgrounds affect employment outcomes.</p>
+                    </div>
+                    <div class="tab-pane fade" id="skills">
+                        <h5 class="mt-3">Skills Analysis</h5>
+                        <p>Content for the skills analysis section. Examine the skills that are in demand and how they correlate with employment rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Limkokwing University of Creative Technology. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Chart.js script for employment rate chart
+        var ctx1 = document.getElementById('employmentRateChart').getContext('2d');
+        var employmentRateChart = new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ['Employed', 'Unemployed'],
+                datasets: [{
+                    data: [85, 15], // Example data
+                    backgroundColor: ['#007bff', '#e9ecef'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (context.parsed) {
+                                    label += `: ${context.parsed}%`;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart.js script for employment comparison chart
+        var ctx2 = document.getElementById('employmentComparisonChart').getContext('2d');
+        var employmentComparisonChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Employment Rate',
+                    data: [80, 82, 85, 87], // Example data
+                    backgroundColor: 'rgba(0, 123, 255, 0.6)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%' }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Employers Registration</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/download.png'%}">
+    <link rel="stylesheet" href="{% static 'stylesheet/navbar.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .form-control {
+            height: 50px; /* Set a consistent height for all inputs */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+        }
+
+        .form-control.textarea {
+            height: 80px; /* Set a consistent height for textareas */
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body style="background-color: #000;">
+    <div class="container" style="margin-top: 100px;">
+        <div class="row justify-content-center" >
+            <div class="col-md-8 bg-light p-4 rounded" style="background-color:#CFD8DC">
+                {% block content %}
+                 <div class="form-header">
+                        <img src="{% static 'images/download.png' %}" alt="Logo" class="img-thumbnail" style="width: 300px; height:200px; margin-left:260px">
+                         <h2 class="text-center">Register as an Employer</h2>
+                 </div>
+
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="{{ form.username.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Username:</label>
+                            <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" class="form-control" value="{{ form.username.value|default_if_none:'' }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.email.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Email:</label>
+                            <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" class="form-control" value="{{ form.email.value|default_if_none:'' }}">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="{{ form.password1.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Password:</label>
+                                <input type="password" name="{{ form.password1.name }}" id="{{ form.password1.id_for_label }}" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.password2.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Confirm Password:</label>
+                                <input type="password" name="{{ form.password2.name }}" id="{{ form.password2.id_for_label }}" class="form-control">
+                            </div>
+                        </div>
+                        <h3 style="text-align:center">Company Details</h3>
+                        <div class="mb-3">
+                            <label for="{{ form.company_name.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Company Name:</label>
+                            <input type="text" name="{{ form.company_name.name }}" id="{{ form.company_name.id_for_label }}" class="form-control" value="{{ form.company_name.value|default_if_none:'' }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.company_description.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Company Description:</label>
+                            <textarea name="{{ form.company_description.name }}" id="{{ form.company_description.id_for_label }}" class="form-control textarea">{{ form.company_description.value|default_if_none:'' }}</textarea>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="{{ form.contact_email.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Company Email:</label>
+                                <input type="email" name="{{ form.contact_email.name }}" id="{{ form.contact_email.id_for_label }}" class="form-control" value="{{ form.contact_email.value|default_if_none:'' }}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.contact_phone.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Contact Phone:</label>
+                                <input type="text" name="{{ form.contact_phone.name }}" id="{{ form.contact_phone.id_for_label }}" class="form-control" value="{{ form.contact_phone.value|default_if_none:'' }}">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="{{ form.website.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Website:</label>
+                                <input type="text" name="{{ form.website.name }}" id="{{ form.website.id_for_label }}" class="form-control" value="{{ form.website.value|default_if_none:'' }}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.address.id_for_label }}" class="form-label" style="font-weight:bold; font-size:16px">Address:</label>
+                                <textarea name="{{ form.address.name }}" id="{{ form.address.id_for_label }}" class="form-control textarea">{{ form.address.value|default_if_none:'' }}</textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn bg-black text-white btn-submit" style="font-weight:bold; font-size:16px; border-radius:20px; height:60px; background-color:#2196F3">Submit</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <label>Already have an account? <a href="employers_login" style=" font-size:19px"><b>Login</b></a></label>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

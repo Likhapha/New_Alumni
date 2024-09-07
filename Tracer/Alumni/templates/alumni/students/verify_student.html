@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Verify Yourself as Student</title>
+    <link rel="stylesheet" href="{% static 'stylesheet/navbar.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .verification-form-container {
+            background-color: #CFD8DC;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .verification-form-container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #343a40;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #495057;
+            text-align: right;
+
+        }
+        .form-control {
+            border-radius: 5px;
+            border-color: #ced4da;
+            box-shadow: none;
+            padding: 10px;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 .2rem rgba(38, 143, 255, .25);
+        }
+        .btn-primary {
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+        .non-field-errors {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="verification-form-container">
+        <div class="form-header">
+            <img src="{% static 'images/download.png' %}" alt="Logo" class="img-thumbnail" style="display: block; margin: 0 auto 20px auto;">
+            <h2 style="text-align: center;">Student Verification</h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="non-field-errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            <div class="form-group row">
+                <label for="id_student_number" class="col-sm-4 col-form-label" style="font-weight:bold">Student Number:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="student_number" id="id_student_number" class="form-control" maxlength="9" value="{{ form.student_number.value|default:'' }}">
+                    {% if form.student_number.errors %}
+                        <div class="error-message">
+                            {{ form.student_number.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_names" class="col-sm-4 col-form-label"  style="font-weight:bold">Full Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="names" id="id_names" class="form-control" maxlength="100" value="{{ form.names.value|default:'' }}">
+                    {% if form.names.errors %}
+                        <div class="error-message">
+                            {{ form.names.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_faculty" class="col-sm-4 col-form-label"  style="font-weight:bold">Faculty:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="faculty" id="id_faculty" class="form-control" maxlength="6" value="{{ form.faculty.value|default:'' }}">
+                    {% if form.faculty.errors %}
+                        <div class="error-message">
+                            {{ form.faculty.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_course" class="col-sm-4 col-form-label"  style="font-weight:bold"> Course:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="course" id="id_course" class="form-control" maxlength="100" value="{{ form.course.value|default:'' }}">
+                    {% if form.course.errors %}
+                        <div class="error-message">
+                            {{ form.course.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_email" class="col-sm-4 col-form-label"  style="font-weight:bold">Email:</label>
+                <div class="col-sm-8">
+                    <input type="email" name="email" id="id_email" class="form-control" maxlength="100" value="{{ form.email.value|default:'' }}">
+                    {% if form.email.errors %}
+                        <div class="error-message">
+                            {{ form.email.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="id_phone_number" class="col-sm-4 col-form-label"  style="font-weight:bold">Phone Number:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="phone_number" id="id_phone_number" class="form-control" maxlength="22" value="{{ form.phone_number.value|default:'' }}">
+                    {% if form.phone_number.errors %}
+                        <div class="error-message">
+                            {{ form.phone_number.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-left: 25%; width: 50%; margin-top: 20px; color: #fff; font-weight: bold; border-radius:20px">Verify</button><br>
+            <a href="students-login" class="btn btn-primary" style="margin-left: 25%; width: 50%; margin-top: 20px; background-color: #000; color: #fff; font-weight: bold; border-radius:20px">Cancel</a>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Distribution - LEAP Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'images/download.png' %}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 1.5rem;
+            border-bottom: 0;
+            border-radius: 15px 15px 0 0;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        .insights {
+            margin-top: 2rem;
+        }
+        .insights h4 {
+            margin-bottom: 1rem;
+        }
+        .insights p {
+            margin-bottom: 1rem;
+        }
+        .insights ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .insights ul li {
+            background: #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .insights ul li strong {
+            color: #007bff;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .industry-summary {
+            margin-top: 2rem;
+        }
+        .industry-summary h4 {
+            margin-bottom: 1rem;
+        }
+        .industry-summary .summary-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .industry-summary .summary-item i {
+            font-size: 2rem;
+            color: #007bff;
+            margin-right: 1rem;
+        }
+        .industry-summary .summary-item h5 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation (Optional) -->
+    {% include 'leap/root_templates/navbar.html' %}
+
+    <!-- Industry Distribution Section -->
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Industry Distribution
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mb-4">Industry Distribution of Graduates</h2>
+
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <canvas id="industryDistributionChart"></canvas>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="industry-summary">
+                    <h4>Key Insights</h4>
+                    <div class="summary-item">
+                        <i class="fas fa-cogs"></i>
+                        <div>
+                            <h5>Tech Industry Dominance</h5>
+                            <p>The tech industry remains the largest employer for our graduates, with significant demand for software engineers and IT professionals.</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div>
+                            <h5>Competitive Salaries</h5>
+                            <p>Graduates in the finance and tech sectors are experiencing higher starting salaries compared to other industries.</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-hospital"></i>
+                        <div>
+                            <h5>Growing Healthcare Sector</h5>
+                            <p>The healthcare industry is expanding, with increasing opportunities for clinical and non-clinical roles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Insights Section -->
+                <div class="insights">
+                    <h4>Industry Trends and Growth</h4>
+                    <p>This section provides a detailed analysis of industry trends, growth areas, and other relevant insights based on recent data.</p>
+                    <ul>
+                        <li><strong>Technology:</strong> Continuous growth in job placements in emerging tech fields such as AI and data science.</li>
+                        <li><strong>Finance:</strong> Steady increase in demand for financial analysts and advisors.</li>
+                        <li><strong>Healthcare:</strong> Expansion of roles in healthcare administration and allied health professions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Limkokwing University of Creative Technology. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Chart.js script for industry distribution chart
+        var ctx = document.getElementById('industryDistributionChart').getContext('2d');
+        var industryDistributionChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Tech', 'Finance', 'Healthcare', 'Education', 'Others'],
+                datasets: [{
+                    label: 'Industry Distribution',
+                    data: [30, 25, 20, 15, 10], // Example data
+                    backgroundColor: [
+                        '#007bff',
+                        '#28a745',
+                        '#dc3545',
+                        '#ffc107',
+                        '#6c757d'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (context.parsed) {
+                                    label += `: ${context.parsed}%`;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

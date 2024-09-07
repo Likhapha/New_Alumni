@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Student</title>
+    <link rel="stylesheet" href="{% static 'stylesheet/navbar.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .form-container {
+            background-color: #CFD8DC;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-header img {
+            max-width: 300px;
+            max-height:150px;
+            margin-bottom: 15px;
+        }
+        .form-header h2 {
+            font-size: 28px;
+            color: #333;
+            margin: 0;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #333;
+            width: 150px; /* Fixed width for labels */
+        }
+        .form-control {
+            border-radius: 8px;
+            border-color: #ced4da;
+            padding: 10px;
+            width: 40%;
+            box-sizing: border-box; /* Ensures padding doesn't increase width */
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .btn-primary {
+            border-radius: 8px;
+            font-size: 16px;
+            padding: 12px;
+            width: 50%;
+            background-color: #007bff;
+            border: none;
+            margin-top: 20px;
+            margin-left: 150px;
+            font-weight:bold;
+            font-size:19px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #d9534f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .non-field-errors {
+            color: #d9534f;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            flex: 1; /* Allows inputs to take the remaining space */
+            margin-left: 20px; /* Space between label and input */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <img src="{% static 'images/download.png' %}" alt="Logo" class="img-fluid">
+            <h2>Students Registration</h2>
+        </div>
+        <form method="POST">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="non-field-errors">
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+    <div class="form-group">
+        <label for="id_username" class="form-label">Username:</label>
+        <input type="text" name="username" id="id_username" class="form-control" value="{{ form.username.value }}">
+        {% if form.username.errors %}
+            <div class="error-message">{{ form.username.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="id_first_name" class="form-label">First Name:</label>
+        <input type="text" name="first_name" id="id_first_name" class="form-control" value="{{ form.first_name.value }}">
+        {% if form.first_name.errors %}
+            <div class="error-message">{{ form.first_name.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="id_last_name" class="form-label">Last Name:</label>
+        <input type="text" name="last_name" id="id_last_name" class="form-control" value="{{ form.last_name.value }}">
+        {% if form.last_name.errors %}
+            <div class="error-message">{{ form.last_name.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="id_email" class="form-label">Email:</label>
+        <input type="email" name="email" id="id_email" class="form-control" value="{{ form.email.value }}">
+        {% if form.email.errors %}
+            <div class="error-message">{{ form.email.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="id_password1" class="form-label">Password:</label>
+        <input type="password" name="password1" id="id_password1" class="form-control">
+        {% if form.password1.errors %}
+            <div class="error-message">{{ form.password1.errors }}</div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="id_password2" class="form-label">Confirm Password:</label>
+        <input type="password" name="password2" id="id_password2" class="form-control">
+        {% if form.password2.errors %}
+            <div class="error-message">{{ form.password2.errors }}</div>
+        {% endif %}
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

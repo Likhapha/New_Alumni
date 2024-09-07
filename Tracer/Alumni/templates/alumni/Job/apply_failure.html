@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Failed</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f8d7da; /* Red background for failure */
+        }
+
+        .failure-message {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .failure-message h1 {
+            color: #721c24; /* Dark red color for text */
+        }
+    </style>
+</head>
+<body>
+
+<div class="failure-message">
+    <h1>Application Failed</h1>
+    <p>{{ message }}</p>
+</div>
+
+</body>
+</html>
