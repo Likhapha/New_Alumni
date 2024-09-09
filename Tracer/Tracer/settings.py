@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-jp2#kghtm&co^c(eq49hxgiwjan-j_#ws6+16)-u@*bf-ju)n(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://vercel.com/mohlabis-projects.vercel.app', 'localhost']
+
 
 # Application definition
 

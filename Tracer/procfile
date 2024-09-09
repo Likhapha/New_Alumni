@@ -1,1 +1,1 @@
-web: gunicorn Tracer.wsgi --bind 0.0.0.0:$PORT
+web: gunicorn Tracer.wsgi --log-file -
